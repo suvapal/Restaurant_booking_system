@@ -1,0 +1,34 @@
+<h2><%= @resshow.name %></h2>
+<p>Phone: <%= @resshow.phone %>  Email: <%= @resshow.email %></p>
+
+<%= form_for :reservation, url: reservations_path do |f| %>
+<% if flash[:notice] %>
+    <div class="alert alert-danger"><%= flash[:notice] %></div>
+  <% end %>
+<% if flash[:success] %>
+    <div class="alert alert-success"><%= flash[:success] %></div>
+  <% end %>
+	<p>
+		<%=f.label :Guest_Email %><br>
+		<%=f.text_field(:gemail, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%=f.label :Reservation_Date%><br>
+		<%= f.date_field(:reservationdate, {:class => "datepicker"})%>
+	</p>
+	<p>
+		<%=f.label :Reservation_Time%><br>
+		<%= f.time_field(:reservationtime, {:class => "timepicker"}) %>
+	</p>
+	<p>
+		<%=f.label :Guest_Count %><br>
+		<%=f.number_field(:gc, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+        <%= f.hidden_field :id %>
+        <%= hidden_field_tag(:id, @resshow.id) %>
+    </p>
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'} ) %>
+	</p>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Edit Guest</h1>
+<%= form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
+<% if @guest.errors.any? %>
+<% @guest.errors.full_messages.each do |msg| %>
+<div class="alert alert-danger"><%= msg %></div>
+<% end %>
+<% end %>
+	<p>
+		<%=f.label :Name %><br>
+		<%=f.text_field(:name, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Phone %><br>
+		<%=f.text_field(:phone, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Email %><br>
+		<%=f.text_field(:email, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'} ) %>
+	</p>
+	<% end %>

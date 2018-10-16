@@ -1,0 +1,26 @@
+<h1>Add Guest</h1>
+<%= form_for :guest, url: guests_path do |f| %>
+<% if @guest.errors.any? %>
+<% @guest.errors.full_messages.each do |msg| %>
+<div class="alert alert-danger"><%= msg %></div>
+<% end %>
+<% end %>
+	<p>
+		<%=f.label :Name %><br>
+		<%=f.text_field(:name, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Phone %><br>
+		<%=f.text_field(:phone, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Email %><br>
+		<%=f.text_field(:email, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'} ) %>
+	</p>
+<% end %>
+
+<%= link_to "Show/Edit the Guest List", guests_path(), :class => 'btn btn-primary' %>
+

@@ -1,0 +1,12 @@
+<h2>Guests...</h2>
+<% @guests.each do |p| %>
+<div style='border-bottom:1px solid #CCCCCC;'>
+<h5><%= p.name %></h5>
+ <p>Phone: <%= p.phone %>  Email: <%= p.email %></p>
+ <hr><%= link_to "Edit", edit_guest_path(p.id), :class => 'btn btn-primary' %>
+  <%= button_to "Delete", guest_path(p.id), method: :delete,
+  						:onclick => "return confirm('Are you sure you want to delete?')",
+  						:class => 'btn btn-danger' %></hr>
+<br></div>
+
+<% end %>

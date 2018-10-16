@@ -1,0 +1,35 @@
+<h1>Add Restaurant</h1>
+<%= form_for :post, url: posts_path do |f| %>
+<% if @post.errors.any? %>
+<% @post.errors.full_messages.each do |msg| %>
+<div class="alert alert-danger"><%= msg %></div>
+<% end %>
+<% end %>
+	<p>
+		<%=f.label :Name %><br>
+		<%=f.text_field(:name, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Phone %><br>
+		<%=f.text_field(:phone, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Email %><br>
+		<%=f.text_field(:email, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Number_of_Table %><br>
+		<%=f.text_field(:table, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Max_Number_Seating %><br>
+		<%=f.text_field(:max, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%=f.label :Min_Number_Seating %><br>
+		<%=f.text_field(:min, {:class => 'form-control'} ) %>
+	</p>
+	<p>
+		<%= f.submit "Save Restaturant", class: "btn btn-primary" %>
+	</p>
+<% end %>

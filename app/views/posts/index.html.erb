@@ -1,0 +1,9 @@
+<h2>Restaurants...</h2>
+<% @posts.each do |p| %>
+<div style='border-bottom:1px solid #CCCCCC;'>
+<h5><%= p.name %></h5>
+ <p>Phone: <%= p.phone %>  Email: <%= p.email %></p>
+<%= link_to "Make a reservation", post_path(p.id), :class => 'btn btn-primary' %>
+<br></div>
+
+<% end %>
