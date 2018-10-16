@@ -1,6 +1,6 @@
 # README
 
-Functionalities:
+#Functionalities:
 
 Add restaurant details
 
@@ -11,7 +11,7 @@ Book reservation
 Recieve email notification for reservation
 
 
-Install & Run
+#Install & Run
 
 git clone https://github.com/suvapal/Restaurant_booking_system
 
@@ -22,7 +22,7 @@ rake db:setup
 rails s
 
 
-Routes
+#Routes
 
 / => List of restaurant to book reservation
 
