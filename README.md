@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Functionalities: 
+Add restaurant details
+Add guest details
+Book reservation
+Recieve email notification for reservation
 
-Things you may want to cover:
+Install & Run
+git clone https://github.com/suvapal/Restaurant_booking_system
+bundle install
+rake db:setup
+rails s
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Routes
+/ => List of restaurant to book reservation
+/posts/new => API to add restaurant details
+guests/new => API to add guest details & edit or delete guest details
