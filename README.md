@@ -28,4 +28,4 @@ rails s
 
 /posts/new => API to add restaurant details
 
-guests/new => API to add guest details & edit or delete guest details
+guests/new => API to add, edit and delete guest details
